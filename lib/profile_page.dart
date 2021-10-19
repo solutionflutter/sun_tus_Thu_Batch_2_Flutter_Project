@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:suntusthsbatchsecond/Edit_page.dart';
+import 'package:suntusthsbatchsecond/Posts_Page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key key}) : super(key: key);
@@ -227,7 +228,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: Color.fromRGBO(245, 245, 245, 0.5),
                         ),
                         child: FlatButton.icon(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context)=>Post_Page(),
+                                ),
+                              );
+                            },
                             icon: Icon(
                               CupertinoIcons.plus_square_on_square,
                               size: 12,
