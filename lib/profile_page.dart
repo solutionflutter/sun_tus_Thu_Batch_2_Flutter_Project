@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:suntusthsbatchsecond/Edit_page.dart';
+import 'package:suntusthsbatchsecond/Follower_Page.dart';
+import 'package:suntusthsbatchsecond/Following_Page.dart';
+import 'package:suntusthsbatchsecond/Messenger_Page.dart';
 import 'package:suntusthsbatchsecond/Posts_Page.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -108,6 +111,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         width: MediaQuery.of(context).size.width/1.7,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(right: 77),
@@ -115,7 +119,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   'Sheikh Hasina',
                                 style: TextStyle(
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 25,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.w700,
                                   color: Color.fromRGBO(249, 248, 240, 1),
                                 ),
@@ -125,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             Text(
                               'National Parliament House,Sher-e-Bangla Nagar, Dhaka',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 12,
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FontStyle.normal,
                                 color: Color.fromRGBO(249, 248, 240, 1),
@@ -255,7 +259,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       //Messanger container button
                       Container(
                         height: MediaQuery.of(context).size.height/15,
-                        width: MediaQuery.of(context).size.width/3.5,
+                        width: MediaQuery.of(context).size.width/3.1,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color.fromRGBO(21, 21,21, 1),
@@ -265,7 +269,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: Color.fromRGBO(245, 245, 245, .5),
                         ),
                         child: FlatButton.icon(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context)=>Messenger_Page(),
+                                ),
+                              );
+                            },
                             icon: Icon(
                               Icons.message_outlined,
                               size: 12,
@@ -285,7 +296,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       //Following button container
                       Container(
                         height: MediaQuery.of(context).size.height/15,
-                        width: MediaQuery.of(context).size.width/3.7,
+                        width: MediaQuery.of(context).size.width/3.2,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color.fromRGBO(21, 21, 21, 1),
@@ -295,7 +306,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: Color.fromRGBO(245, 245, 245, .5),
                         ),
                         child: FlatButton.icon(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context)=>Following_Page(),
+                                ),
+                              );
+                            },
                             icon: Icon(
                                 Icons.follow_the_signs_rounded,
                                 size: 12,
@@ -316,7 +334,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
                       Container(
                         height: MediaQuery.of(context).size.height/15,
-                        width: MediaQuery.of(context).size.width/3.9,
+                        width: MediaQuery.of(context).size.width/3.5,
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color.fromRGBO(21, 21, 21, 1),
@@ -326,7 +344,14 @@ class _ProfilePageState extends State<ProfilePage> {
                           color: Color.fromRGBO(245, 245, 245, .5),
                         ),
                         child: FlatButton.icon(
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context)=>Follower_Page(),
+                                ),
+                              );
+                            },
                             icon: Icon(
                               Icons.add_circle_outline,
                               size: 12,
