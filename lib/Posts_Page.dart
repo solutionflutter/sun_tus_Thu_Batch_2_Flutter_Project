@@ -154,11 +154,160 @@ class _Post_PageState extends State<Post_Page> {
                            children: [
                              Icon(
                                Icons.location_on,
-                               size: ,
+                               size: 15,
+                               color: Color.fromRGBO(21, 21, 21, 1),
+                             ),
+                             Expanded(
+                               child: Padding(
+                                 padding: EdgeInsets.symmetric(horizontal: 10),
+                                 child: Text(
+                                     "${post[index].address}",
+                                   style: TextStyle(
+                                     fontSize: 15,
+                                     fontWeight: FontWeight.w500,
+                                     color: Color.fromRGBO(21, 21, 21, 1),
+                                   ),
+                                   textAlign: TextAlign.start,
+                                 ),
+                               ),
                              ),
                            ],
                          ),
-                       )
+                       ),
+
+                       //Caption Text Container
+                       Padding(
+                         padding: const EdgeInsets.symmetric(vertical: 7),
+                         child: Container(
+                           height: MediaQuery.of(context).size.height/15,
+                           width: MediaQuery.of(context).size.width,
+                           child: Text(
+                             "${post[index].caption}",
+                             style: TextStyle(
+                               fontSize: 15,
+                               fontWeight: FontWeight.w500,
+                               color: Color.fromRGBO(0, 0, 0, .6),
+                             ),
+                             textAlign: TextAlign.start,
+                           ),
+                         ),
+                       ),
+
+                       //Image container
+
+                       Padding(
+                         padding: const EdgeInsets.symmetric(vertical: 1),
+                         child: Container(
+                           height: MediaQuery.of(context).size.height/4,
+                           width: MediaQuery.of(context).size.width,
+                           decoration: BoxDecoration(
+                             image: DecorationImage(
+                               image: AssetImage("${post[index].postImageURL}"),
+                               fit: BoxFit.fill,
+                             ),
+                             borderRadius: BorderRadius.circular(12),
+                           ),
+                         ),
+                       ),
+
+                       //Buttons Container
+                       Container(
+                         height: MediaQuery.of(context).size.height/15,
+                         width: MediaQuery.of(context).size.width,
+                         margin: EdgeInsets.symmetric(vertical: 10),
+                         child: Row(
+                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                           children: [
+
+                             //Likes Button Container
+
+                             Container(
+                               height: MediaQuery.of(context).size.height,
+                               width: MediaQuery.of(context).size.width/3.9,
+                               decoration: BoxDecoration(
+                                 border: Border.all(
+                                   color: Color.fromRGBO(0,0,0,.6),
+                                   width: 3,
+                                   style: BorderStyle.solid,
+                                 ),
+                               ),
+                               child: FlatButton.icon(
+                                   onPressed: (){},
+                                   icon: Icon(
+                                       CupertinoIcons.heart,
+                                       color: Color.fromRGBO(0,0,0,.6),
+                                       size: 13,
+                                   ),
+                                   label: Text(
+                                     "${post[index].likes} likes",
+                                     style: TextStyle(
+                                       fontWeight: FontWeight.w400,
+                                       fontSize: 8,
+                                       color: Color.fromRGBO(0, 0, 0, .6),
+                                     ),
+                                   ),
+                               ),
+                             ),
+
+                             // Comments button container
+                             Container(
+                               height: MediaQuery.of(context).size.height,
+                               width: MediaQuery.of(context).size.width/3.7,
+                               decoration: BoxDecoration(
+                                 border: Border.all(
+                                   color: Color.fromRGBO(0, 0, 0, .6),
+                                   style: BorderStyle.solid,
+                                   width: 3,
+                                 )
+                               ),
+                               child: FlatButton.icon(
+                                   onPressed: (){},
+                                   icon: Icon(Icons.message_outlined,
+                                   size: 13,
+                                   color: Color.fromRGBO(0, 0, 0, .6),
+                                   ),
+                                   label: Text(
+                                     "Comments",
+                                     style: TextStyle(
+                                       color: Color.fromRGBO(0, 0, 0, .6),
+                                       fontSize: 8,
+                                       fontWeight: FontWeight.w500,
+                                     ),
+                                   ),
+                               ),
+                             ),
+
+                             // Share Button Container
+
+                             Container(
+                               height: MediaQuery.of(context).size.height,
+                               width: MediaQuery.of(context).size.width/4,
+                               decoration: BoxDecoration(
+                                   border: Border.all(
+                                     color: Color.fromRGBO(0, 0, 0, .6),
+                                     style: BorderStyle.solid,
+                                     width: 3,
+                                   )
+                               ),
+                               child: FlatButton.icon(
+                                 onPressed: (){},
+                                 icon: Icon(Icons.share_outlined,
+                                   size: 13,
+                                   color: Color.fromRGBO(0, 0, 0, .6),
+                                 ),
+                                 label: Text(
+                                   "Share",
+                                   style: TextStyle(
+                                     color: Color.fromRGBO(0, 0, 0, .6),
+                                     fontSize: 8,
+                                     fontWeight: FontWeight.w500,
+                                   ),
+                                 ),
+                               ),
+                             ),
+                           ]
+                         ),
+                       ),
                      ],
                    ),
                  ),
