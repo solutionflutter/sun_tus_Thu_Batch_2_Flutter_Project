@@ -46,6 +46,7 @@ flutter:
   assets:
     - images/
     - images/Posts/
+    - images/Profile_Images/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
