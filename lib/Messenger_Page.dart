@@ -140,6 +140,7 @@ class _Messenger_PageState extends State<Messenger_Page> {
           ),
           SliverToBoxAdapter(
             child: Container(
+              margin: EdgeInsets.symmetric(vertical: 10),
               height: MediaQuery.of(context).size.height / 10,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
@@ -164,6 +165,86 @@ class _Messenger_PageState extends State<Messenger_Page> {
                   );
                 },
               ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+              child: Text(
+                "Messages",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(21, 21, 21, 1),
+                ),
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return InkWell(
+                  onTap: () {},
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                    height: MediaQuery.of(context).size.height / 10,
+                    width: MediaQuery.of(context).size.width,
+                    child: Row(
+                      children: [
+                        Stack(
+                          overflow: Overflow.visible,
+                          children: [
+                            CircleAvatar(
+                              radius: 35,
+                              backgroundImage: AssetImage(
+                                  "${messengerModel[index].userProfilePicture}"),
+                            ),
+                            Positioned(
+                              top: MediaQuery.of(context).size.height / 15,
+                              left: MediaQuery.of(context).size.width / 6.2,
+                              child: CircleAvatar(
+                                radius: 6,
+                                backgroundColor: Color.fromRGBO(20, 255, 10, 1),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 10,
+                          ),
+                          height: MediaQuery.of(context).size.height / 10,
+                          width: MediaQuery.of(context).size.width / 1.4,
+                          child: RichText(
+                            textAlign: TextAlign.justify,
+                            text: TextSpan(
+                              text: "${messengerModel[index].username}\n",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color.fromRGBO(0, 0, 0, .6),
+                                  height: 1.3),
+                              children: [
+                                TextSpan(
+                                  text:
+                                      "last Message : ${messengerModel[index].lastmessage}",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color.fromRGBO(0, 0, 0, .6),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              },
+              childCount: messengerModel.length,
             ),
           ),
         ],
