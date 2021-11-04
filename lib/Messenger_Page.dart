@@ -2,6 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:suntusthsbatchsecond/profile_page.dart';
 
+List<String> imagesAvater = [
+  "images/Profile_Images/user_1.jpg",
+  "images/Profile_Images/user_2.jpg",
+  "images/Profile_Images/user_3.jpg",
+  "images/Profile_Images/user_4.jpg",
+  "images/Profile_Images/user_5.jpg",
+  "images/Profile_Images/user_6.jpg",
+  "images/Profile_Images/user_7.jpg",
+  "images/Profile_Images/user_8.jpg",
+  "images/Profile_Images/user_9.jpg",
+  "images/Profile_Images/user_10.jpg",
+];
+
 class Messenger_Page extends StatefulWidget {
   const Messenger_Page({Key key}) : super(key: key);
 
@@ -15,12 +28,12 @@ class _Messenger_PageState extends State<Messenger_Page> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: (){
+          onPressed: () {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context)=>ProfilePage(),
-                ),
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfilePage(),
+              ),
             );
           },
           icon: Icon(
@@ -30,53 +43,76 @@ class _Messenger_PageState extends State<Messenger_Page> {
           iconSize: 20,
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(left: 15,right: 10,top: 10,bottom: 10),
+          IconButton(
+            icon: Icon(
+              Icons.refresh_outlined,
+              color: Color.fromRGBO(0, 0, 0, .6),
+            ),
+            iconSize: 20,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Messenger_Page(),
+                ),
+              );
+            },
+          ),
+        ],
+        backgroundColor: Color.fromRGBO(240, 240, 240, .6),
+        centerTitle: true,
+        title: Text(
+          "Messenger",
+          style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 20,
+              color: Color.fromRGBO(31, 31, 45, .6)),
+        ),
+      ),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
             child: Container(
-              height: MediaQuery.of(context).size.height/15,
-              width: MediaQuery.of(context).size.width/2.5,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Color.fromRGBO(21, 21,21, .5),
-                  width: 3,
-                  style: BorderStyle.solid,
-                ),
-              ),
-              child: FlatButton.icon(
-                onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context)=>Messenger_Page(),
-                    ),
-                  );
-                },
-                icon: Icon(
-                  Icons.message,
-                  size: 15,
-                  color: Color.fromRGBO(31, 31, 45,0.6),
-                ),
-                label: Text(
-                    "Messages",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color: Color.fromRGBO(31, 31, 31, 0.6)
-                  ),
+              margin: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+              child: Text(
+                "Friends",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(21, 21, 21, 1),
                 ),
               ),
             ),
-          )
-        ],
-        centerTitle: true,
-        title: Text(
-            "Messenger",
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-            color: Color.fromRGBO(31, 31, 45, .6)
           ),
-        ),
+          SliverToBoxAdapter(
+            child: Container(
+              height: MediaQuery.of(context).size.height / 10,
+              width: MediaQuery.of(context).size.width,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: imagesAvater.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Container(
+                    margin: EdgeInsets.symmetric(horizontal: 7),
+                    height: MediaQuery.of(context).size.height / 5,
+                    width: MediaQuery.of(context).size.width / 5,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage("${imagesAvater[index]}"),
+                        fit: BoxFit.fitWidth,
+                      ),
+                      border: Border.all(
+                          color: Color.fromRGBO(100, 100, 255, 1),
+                          style: BorderStyle.solid,
+                          width: 3),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
