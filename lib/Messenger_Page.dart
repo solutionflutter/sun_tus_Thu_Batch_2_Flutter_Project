@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:suntusthsbatchsecond/Models/Models.dart';
 import 'package:suntusthsbatchsecond/profile_page.dart';
 
 List<String> imagesAvater = [
@@ -13,6 +14,59 @@ List<String> imagesAvater = [
   "images/Profile_Images/user_8.jpg",
   "images/Profile_Images/user_9.jpg",
   "images/Profile_Images/user_10.jpg",
+];
+
+List<MessengerModel> messengerModel = [
+  MessengerModel(
+    username: "Abdur Rajjak",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_1.jpg",
+  ),
+  MessengerModel(
+    username: "Shakib Al Hasan",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_2.jpg",
+  ),
+  MessengerModel(
+    username: "Tawsif Mahbub",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_3.jpg",
+  ),
+  MessengerModel(
+    username: "Mosharraf Karim",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_4.jpg",
+  ),
+  MessengerModel(
+    username: "Chanchal Chowdhury",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_5.jpg",
+  ),
+  MessengerModel(
+    username: "Afran Nisho",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_6.jpg",
+  ),
+  MessengerModel(
+    username: "Ziaul Faruq Apurba",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_7.jpg",
+  ),
+  MessengerModel(
+    username: "Siam Ahmed",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_8.jpg",
+  ),
+  MessengerModel(
+    username: "Zakia Bari Mamo",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_9.jpg",
+  ),
+  MessengerModel(
+    username: "Mashrafe Mortaza",
+    lastmessage: "How Are You??",
+    userProfilePicture: "images/Profile_Images/user_10.jpg",
+  ),
 ];
 
 class Messenger_Page extends StatefulWidget {
