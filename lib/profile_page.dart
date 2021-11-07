@@ -6,6 +6,32 @@ import 'package:suntusthsbatchsecond/Following_Page.dart';
 import 'package:suntusthsbatchsecond/Messenger_Page.dart';
 import 'package:suntusthsbatchsecond/Posts_Page.dart';
 
+List<String> posts = [
+  "images/Posts/post_1.jpg",
+  "images/Posts/post_2.jpg",
+  "images/Posts/post_3.jpg",
+  "images/Posts/post_4.jpg",
+  "images/Posts/post_5.jpg",
+  "images/Posts/post_6.jpg",
+  "images/Posts/post_7.jpg",
+  "images/Posts/post_8.jpg",
+  "images/Posts/post_9.jpg",
+  "images/Posts/post_10.jpg",
+];
+
+List<String> friends = [
+  "images/Profile_Images/user_1.jpg",
+  "images/Profile_Images/user_2.jpg",
+  "images/Profile_Images/user_3.jpg",
+  "images/Profile_Images/user_4.jpg",
+  "images/Profile_Images/user_5.jpg",
+  "images/Profile_Images/user_6.jpg",
+  "images/Profile_Images/user_7.jpg",
+  "images/Profile_Images/user_8.jpg",
+  "images/Profile_Images/user_9.jpg",
+  "images/Profile_Images/user_10.jpg",
+];
+
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key key}) : super(key: key);
 
@@ -372,6 +398,114 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ],
               ),
+            ),
+          ),
+
+          // Text SlivertoBoxAdapter
+
+          SliverToBoxAdapter(
+            child: Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 25,
+                vertical: MediaQuery.of(context).size.height / 30,
+              ),
+              height: MediaQuery.of(context).size.height / 20,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                "Posts photos",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(21, 21, 21, 1),
+                ),
+              ),
+            ),
+          ),
+
+          //posts images sliver grid view
+
+          SliverGrid(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 10,
+                  ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 4,
+                    width: MediaQuery.of(context).size.width / 4,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("${posts[index]}"),
+                        fit: BoxFit.fill,
+                      ),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                );
+              },
+              childCount: posts.length,
+            ),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: 3 / 2,
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
+          ),
+
+          // Friends Text SlivertoBoxAdapter
+
+          SliverToBoxAdapter(
+            child: Container(
+              margin: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 25,
+                vertical: MediaQuery.of(context).size.height / 30,
+              ),
+              height: MediaQuery.of(context).size.height / 20,
+              width: MediaQuery.of(context).size.width,
+              child: Text(
+                "Friends photos",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Color.fromRGBO(21, 21, 21, 1),
+                ),
+              ),
+            ),
+          ),
+
+          //Friends images sliver grid view
+
+          SliverGrid(
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 10,
+                  ),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height / 4,
+                    width: MediaQuery.of(context).size.width / 4,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("${friends[index]}"),
+                        fit: BoxFit.fill,
+                      ),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                );
+              },
+              childCount: friends.length,
+            ),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              childAspectRatio: 3 / 2,
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
             ),
           ),
         ],
