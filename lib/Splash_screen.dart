@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:suntusthsbatchsecond/TimeLinePage.dart';
 import 'package:suntusthsbatchsecond/profile_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(186, 194, 192,.5),
+      backgroundColor: Color.fromRGBO(186, 194, 192, .5),
       body: Align(
         alignment: Alignment.center,
         child: Container(
@@ -24,22 +25,22 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-               Container(
-                 height: 120,
-                 width: 120,
-                 decoration: BoxDecoration(
-                   shape: BoxShape.rectangle,
-                   border: Border.all(
-                     color: Color.fromRGBO(158, 245, 44,1),
-                     width: 3,
-                     style: BorderStyle.solid,
-                   ),
-                   image: DecorationImage(
-                     image: AssetImage("images/Cover_Image.png"),
-                     fit: BoxFit.fill,
-                   ),
-                 ),
-               ),
+              Container(
+                height: 120,
+                width: 120,
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  border: Border.all(
+                    color: Color.fromRGBO(158, 245, 44, 1),
+                    width: 3,
+                    style: BorderStyle.solid,
+                  ),
+                  image: DecorationImage(
+                    image: AssetImage("images/Cover_Image.png"),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
 
               //Text Container
 
@@ -50,19 +51,18 @@ class _SplashScreenState extends State<SplashScreen> {
                   alignment: Alignment.center,
                   child: Text(
                     "Welcome to flutter advance project.It is an ICTD Project. "
-                        "Let's get started.",
+                    "Let's get started.",
                     style: TextStyle(
-                      color: Color.fromRGBO(201, 204, 212, 1),
-                      fontWeight: FontWeight.w800,
-                      fontSize: 25,
-                      fontStyle: FontStyle.normal,
-                      wordSpacing: 5,
-                      height: 1,
-                      decoration: TextDecoration.underline,
-                      decorationThickness: 2,
-                      decorationStyle: TextDecorationStyle.wavy,
-                      decorationColor: Color.fromRGBO(44, 209, 29,1)
-                    ),
+                        color: Color.fromRGBO(201, 204, 212, 1),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 25,
+                        fontStyle: FontStyle.normal,
+                        wordSpacing: 5,
+                        height: 1,
+                        decoration: TextDecoration.underline,
+                        decorationThickness: 2,
+                        decorationStyle: TextDecorationStyle.wavy,
+                        decorationColor: Color.fromRGBO(44, 209, 29, 1)),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -70,10 +70,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
               // Enter button container
               InkWell(
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context)=>ProfilePage(),
+                    MaterialPageRoute(
+                      builder: (context) => TimeLinePage(),
                     ),
                   );
                 },
@@ -93,9 +94,9 @@ class _SplashScreenState extends State<SplashScreen> {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children:[
+                    children: [
                       Text(
-                          "Start",
+                        "Start",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
