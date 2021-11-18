@@ -5,6 +5,7 @@ import 'package:suntusthsbatchsecond/Follower_Page.dart';
 import 'package:suntusthsbatchsecond/Following_Page.dart';
 import 'package:suntusthsbatchsecond/Messenger_Page.dart';
 import 'package:suntusthsbatchsecond/Posts_Page.dart';
+import 'package:suntusthsbatchsecond/Splash_screen.dart';
 
 List<String> posts = [
   "images/Posts/post_1.jpg",
@@ -46,7 +47,12 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
           leading: IconButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SplashScreen(),
+                ),
+              );
             },
             icon: Icon(Icons.arrow_back),
             iconSize: 18,
